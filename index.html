@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -18,6 +17,7 @@
             --text-light: #64748b;
             --bg-light: #f8fafc;
             --white: #ffffff;
+            --accent: #f59e0b;
         }
 
         * {
@@ -50,6 +50,7 @@
             transition: all 0.3s ease;
             cursor: pointer;
             border: none;
+            text-align: center;
         }
 
         .btn-primary {
@@ -61,6 +62,17 @@
             background-color: var(--primary-dark);
             transform: translateY(-2px);
             box-shadow: 0 4px 12px rgba(14, 165, 233, 0.3);
+        }
+        
+        .btn-accent {
+            background-color: var(--secondary);
+            color: var(--white);
+        }
+
+        .btn-accent:hover {
+            background-color: #1e293b;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(15, 23, 42, 0.3);
         }
 
         /* Header */
@@ -128,6 +140,18 @@
             color: var(--text-light);
             max-width: 700px;
             margin: 0 auto 40px;
+        }
+
+        .badge-edital {
+            display: inline-block;
+            background-color: #fef3c7;
+            color: #b45309;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            border: 1px solid #fde68a;
         }
 
         /* Video Section */
@@ -370,32 +394,33 @@
         <nav>
             <div class="logo">E-<span>CoA</span></div>
             <ul class="nav-links">
-                <li><a href="#como-funciona">Como Funciona</a></li>
-                <li><a href="#problema">O Problema</a></li>
+                <li><a href="#como-funciona">O Projeto</a></li>
+                <li><a href="#problema">O Desafio</a></li>
                 <li><a href="#solucao">O App</a></li>
                 <li><a href="#seguranca">Segurança</a></li>
             </ul>
-            <a href="#contato" class="btn btn-primary" style="padding: 10px 20px; font-size: 14px;">Demo Grátis</a>
+            <a href="https://tally.so/r/2E7rNb" target="_blank" class="btn btn-primary" style="padding: 10px 20px; font-size: 14px;">Lista de Espera VIP</a>
         </nav>
     </div>
 </header>
 
 <section class="hero">
     <div class="container">
-        <span class="section-tag">Nova Era no Home Care</span>
+        <div class="badge-edital"><i class="fa-solid fa-rocket"></i> Projeto Apoiado por Edital de Inovação</div>
         <h1>Comunicação assistencial inteligente, segura e organizada.</h1>
-        <p>Elimine o caos do WhatsApp e ferramentas improvisadas. Centralize toda a jornada do paciente em uma plataforma feita para profissionais de saúde.</p>
+        <p>A E-CoA é uma startup que está a construir a plataforma definitiva para Home Cares. Ajude-nos a moldar o futuro da saúde domiciliária sendo um dos nossos Parceiros Piloto.</p>
         <div class="hero-btns">
-            <a href="#contato" class="btn btn-primary">Começar agora</a>
-            <a href="#como-funciona" class="btn" style="color: var(--text-main); margin-left: 10px;">Ver vídeo Institucional <i class="fa-solid fa-play" style="margin-left: 5px; font-size: 12px;"></i></a>
+            <a href="https://tally.so/r/2E7rNb" target="_blank" class="btn btn-primary">Quero ser um Parceiro Piloto</a>
+            <a href="#como-funciona" class="btn" style="color: var(--text-main); margin-left: 10px;">Conhecer o Projeto <i class="fa-solid fa-play" style="margin-left: 5px; font-size: 12px;"></i></a>
         </div>
+        <p style="margin-top: 15px; font-size: 13px; color: var(--text-light);"><i class="fa-solid fa-lock"></i> Vagas limitadas para acesso antecipado exclusivo.</p>
     </div>
 </section>
 
 <section id="como-funciona" class="video-section">
     <div class="container">
         <div class="video-wrapper">
-            <iframe src="https://www.youtube.com/embed/MBjZqGDRKIM" title="E-CoA - Como Funciona" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe src="https://www.youtube-nocookie.com/embed/MBjZqGDRKIM" title="E-CoA - Como Funciona" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
     </div>
 </section>
@@ -403,17 +428,17 @@
 <section id="problema" class="problem">
     <div class="container">
         <span class="section-tag">O Desafio Atual</span>
-        <h2 class="section-title">Por que o "jeitinho" digital está prejudicando sua operação?</h2>
+        <h2 class="section-title">Por que o "jeitinho" digital prejudica a sua operação?</h2>
         <div class="problem-grid">
             <div class="problem-card">
                 <i class="fa-solid fa-triangle-exclamation"></i>
                 <h3>Insegurança Jurídica</h3>
-                <p>Dados de pacientes em grupos de WhatsApp expõem sua empresa a multas pesadas e riscos éticos.</p>
+                <p>Dados de pacientes em grupos de WhatsApp expõem a sua empresa a multas pesadas e riscos éticos.</p>
             </div>
             <div class="problem-card">
                 <i class="fa-solid fa-comments-dollar"></i>
                 <h3>Ruídos de Comunicação</h3>
-                <p>63% das falhas no Home Care ocorrem por má troca de informações entre plantonistas e equipe técnica.</p>
+                <p>63% das falhas no Home Care ocorrem por má troca de informações entre plantonistas e equipa técnica.</p>
             </div>
             <div class="problem-card">
                 <i class="fa-solid fa-clock-rotate-left"></i>
@@ -429,13 +454,13 @@
         <div class="features-grid">
             <div>
                 <span class="section-tag" style="text-align: left;">Experiência Mobile</span>
-                <h2 class="section-title" style="text-align: left; margin-bottom: 40px;">O App E-CoA na palma da mão da sua equipe.</h2>
+                <h2 class="section-title" style="text-align: left; margin-bottom: 40px;">A App E-CoA na palma da mão da sua equipa.</h2>
                 
                 <div class="feature-item">
                     <div class="feature-icon"><i class="fa-solid fa-mobile-screen"></i></div>
                     <div class="feature-text">
                         <h4>Interface Intuitiva</h4>
-                        <p>Desenvolvido para uso em campo (beira leito), com navegação fluida adaptada à rotina corrida dos profissionais de saúde.</p>
+                        <p>Desenvolvido para uso no terreno (à beira do leito), com navegação fluida adaptada à rotina corrida dos profissionais de saúde.</p>
                     </div>
                 </div>
 
@@ -448,19 +473,19 @@
                 </div>
 
                 <div class="feature-item">
-                    <div class="feature-icon"><i class="fa-solid fa-message"></i></div>
+                    <div class="feature-icon"><i class="fa-solid fa-lightbulb"></i></div>
                     <div class="feature-text">
-                        <h4>Chat Profissional Estruturado</h4>
-                        <p>Conversas separadas por paciente, com permissões de acesso baseadas no perfil técnico.</p>
+                        <h4>Moldado por Si</h4>
+                        <p>Como parceiro *early adopter*, o seu *feedback* guiará as integrações e funcionalidades que estamos a desenvolver.</p>
                     </div>
                 </div>
             </div>
             
             <div style="background: rgba(255,255,255,0.05); border-radius: 20px; padding: 40px; border: 1px solid rgba(255,255,255,0.1); text-align: center;">
                 <div class="mobile-video-wrapper">
-                    <iframe src="https://www.youtube.com/embed/9D65KAp71d4?autoplay=1&mute=1&loop=1&playlist=9D65KAp71d4" title="Demonstração App E-CoA" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe src="https://www.youtube-nocookie.com/embed/9D65KAp71d4?autoplay=1&mute=1&loop=1&playlist=9D65KAp71d4" title="Demonstração App E-CoA" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
-                <p style="font-style: italic; color: #94a3b8;">Veja como é simples acessar as informações no dia a dia da assistência.</p>
+                <p style="font-style: italic; color: #94a3b8;">Veja a simplicidade que estamos a projetar para o seu dia a dia.</p>
             </div>
         </div>
     </div>
@@ -471,11 +496,11 @@
         <div class="security-box">
             <div class="security-content">
                 <span class="security-badge">100% COMPLIANT</span>
-                <h2 style="font-size: 32px; margin-bottom: 20px; color: var(--secondary);">Tranquilidade jurídica com LGPD</h2>
-                <p style="color: var(--text-light); margin-bottom: 24px;">Diferente de aplicativos genéricos, o E-CoA utiliza criptografia de nível bancário e servidores dedicados à saúde. Seus dados — e os dos seus pacientes — nunca estiveram tão protegidos.</p>
+                <h2 style="font-size: 32px; margin-bottom: 20px; color: var(--secondary);">Tranquilidade jurídica com a LGPD</h2>
+                <p style="color: var(--text-light); margin-bottom: 24px;">Diferente de aplicações genéricas, a E-CoA utiliza criptografia de nível bancário e servidores dedicados à saúde. Os seus dados — e os dos seus pacientes — nunca estiveram tão protegidos.</p>
                 <ul style="list-style: none; text-align: left; display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
                     <li><i class="fa-solid fa-check" style="color: #22c55e;"></i> Backup Diário</li>
-                    <li><i class="fa-solid fa-check" style="color: #22c55e;"></i> Controle de Acesso</li>
+                    <li><i class="fa-solid fa-check" style="color: #22c55e;"></i> Controlo de Acesso</li>
                     <li><i class="fa-solid fa-check" style="color: #22c55e;"></i> Logs de Auditoria</li>
                     <li><i class="fa-solid fa-check" style="color: #22c55e;"></i> Termos Específicos</li>
                 </ul>
@@ -487,11 +512,22 @@
     </div>
 </section>
 
-<section id="contato" style="padding: 100px 0; text-align: center;">
+<section id="contato" style="padding: 100px 0; text-align: center; background-color: var(--bg-light);">
     <div class="container">
-        <h2 class="section-title">Pronto para elevar o nível da sua assistência?</h2>
-        <p style="max-width: 600px; margin: -40px auto 40px; color: var(--text-light);">Nossa equipe de especialistas está pronta para mostrar como o E-CoA se adapta à sua rotina operacional.</p>
-        <a href="#" class="btn btn-primary" style="padding: 20px 50px; font-size: 18px;">Solicitar Demonstração Gratuita</a>
+        <span class="section-tag">Vagas Limitadas</span>
+        <h2 class="section-title" style="margin-bottom: 20px;">Faça parte da revolução no Home Care</h2>
+        <p style="max-width: 700px; margin: 0 auto 40px; color: var(--text-main); font-size: 18px;">
+            A nossa plataforma está em fase de construção com recursos garantidos por edital de inovação. Estamos a selecionar <strong>um grupo exclusivo de clínicas e Home Cares</strong> para acesso antecipado e cocriação.
+        </p>
+        <div style="background: white; padding: 40px; border-radius: 16px; max-width: 600px; margin: 0 auto; box-shadow: 0 10px 30px rgba(0,0,0,0.05);">
+            <h3 style="margin-bottom: 20px; color: var(--secondary);">Vantagens de ser Parceiro Piloto:</h3>
+            <ul style="text-align: left; list-style: none; margin-bottom: 30px; color: var(--text-light); display: flex; flex-direction: column; gap: 12px;">
+                <li><i class="fa-solid fa-star" style="color: var(--accent); margin-right: 10px;"></i> Prioridade no onboarding quando a app for lançada.</li>
+                <li><i class="fa-solid fa-star" style="color: var(--accent); margin-right: 10px;"></i> Condições comerciais vitalícias e exclusivas de lançamento.</li>
+                <li><i class="fa-solid fa-star" style="color: var(--accent); margin-right: 10px;"></i> Ajude a desenhar as funcionalidades de que a SUA equipa precisa.</li>
+            </ul>
+            <a href="https://tally.so/r/2E7rNb" target="_blank" class="btn btn-accent" style="padding: 18px 40px; font-size: 18px; width: 100%; display: block;">Preencher Formulário de Inscrição VIP</a>
+        </div>
     </div>
 </section>
 
@@ -500,14 +536,14 @@
         <div class="footer-grid">
             <div>
                 <div class="footer-logo">E-<span>CoA</span></div>
-                <p>Inovação tecnológica para a saúde domiciliar. Conectando equipes, protegendo dados e salvando vidas.</p>
+                <p>Uma startup alagoana de inovação tecnológica para a saúde domiciliária. Conectamos equipas, protegemos dados e salvamos vidas.</p>
             </div>
             <div class="footer-links">
                 <h5>Plataforma</h5>
                 <ul>
-                    <li><a href="#">Funcionalidades</a></li>
+                    <li><a href="#">O Projeto</a></li>
                     <li><a href="#">Segurança</a></li>
-                    <li><a href="#">Integrações</a></li>
+                    <li><a href="#">Edital e Fomento</a></li>
                 </ul>
             </div>
             <div class="footer-links">
