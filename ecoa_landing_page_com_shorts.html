@@ -1,0 +1,529 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-CoA | Comunicação Inteligente para Home Care</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        :root {
+            --primary: #0ea5e9;
+            --primary-dark: #0284c7;
+            --secondary: #0f172a;
+            --text-main: #334155;
+            --text-light: #64748b;
+            --bg-light: #f8fafc;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+            background-color: var(--white);
+        }
+
+        /* Utils */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 30px;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(14, 165, 233, 0.3);
+        }
+
+        /* Header */
+        header {
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid #f1f5f9;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--secondary);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span { color: var(--primary); }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-main);
+            font-weight: 500;
+            font-size: 15px;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover { color: var(--primary); }
+
+        /* Hero */
+        .hero {
+            padding: 160px 0 100px;
+            background: linear-gradient(135deg, #f0f9ff 0%, #ffffff 100%);
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 52px;
+            font-weight: 800;
+            color: var(--secondary);
+            margin-bottom: 24px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 20px;
+            color: var(--text-light);
+            max-width: 700px;
+            margin: 0 auto 40px;
+        }
+
+        /* Video Section */
+        .video-section {
+            padding: 40px 0 80px;
+            background: linear-gradient(180deg, #ffffff 0%, var(--bg-light) 100%);
+            text-align: center;
+        }
+
+        .video-wrapper {
+            max-width: 800px;
+            margin: 0 auto;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(14, 165, 233, 0.15);
+            aspect-ratio: 16/9;
+            background: #000;
+            border: 8px solid white;
+        }
+
+        .video-wrapper iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Problem Section */
+        .problem {
+            padding: 100px 0;
+            background-color: var(--white);
+        }
+
+        .section-tag {
+            color: var(--primary);
+            text-transform: uppercase;
+            font-weight: 700;
+            font-size: 14px;
+            letter-spacing: 1px;
+            display: block;
+            margin-bottom: 12px;
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: 36px;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 60px;
+            color: var(--secondary);
+        }
+
+        .problem-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .problem-card {
+            padding: 40px;
+            background: var(--bg-light);
+            border-radius: 16px;
+            transition: transform 0.3s;
+        }
+
+        .problem-card:hover { transform: translateY(-5px); }
+
+        .problem-card i {
+            font-size: 32px;
+            color: #ef4444;
+            margin-bottom: 20px;
+        }
+
+        .problem-card h3 {
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+
+        /* Features */
+        .features {
+            padding: 100px 0;
+            background-color: var(--secondary);
+            color: var(--white);
+        }
+
+        .features .section-title { color: var(--white); }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .feature-item {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .feature-icon {
+            background: rgba(14, 165, 233, 0.1);
+            color: var(--primary);
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            flex-shrink: 0;
+        }
+
+        .feature-text h4 {
+            font-size: 20px;
+            margin-bottom: 8px;
+        }
+
+        .feature-text p {
+            color: #94a3b8;
+            font-size: 16px;
+        }
+        
+        /* Mobile Video Wrapper */
+        .mobile-video-wrapper {
+            width: 100%;
+            max-width: 300px;
+            margin: 0 auto 30px;
+            border-radius: 36px;
+            overflow: hidden;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+            aspect-ratio: 9/16;
+            background: #000;
+            border: 12px solid #1e293b;
+            position: relative;
+        }
+        
+        /* Top Notch Simulation */
+        .mobile-video-wrapper::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 25px;
+            background: #1e293b;
+            border-bottom-left-radius: 16px;
+            border-bottom-right-radius: 16px;
+            z-index: 10;
+        }
+
+        .mobile-video-wrapper iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Security / LGPD */
+        .security {
+            padding: 100px 0;
+            text-align: center;
+            background: #fff;
+        }
+
+        .security-box {
+            background: var(--bg-light);
+            padding: 60px;
+            border-radius: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            text-align: left;
+        }
+
+        .security-content { max-width: 600px; }
+
+        .security-badge {
+            background: #dcfce7;
+            color: #166534;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 12px;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+
+        /* Footer */
+        footer {
+            padding: 80px 0 40px;
+            background: #0a0f1d;
+            color: #94a3b8;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 60px;
+        }
+
+        .footer-logo {
+            color: white;
+            font-size: 24px;
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+
+        .footer-links h5 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+
+        .footer-links ul { list-style: none; }
+        .footer-links li { margin-bottom: 12px; }
+        .footer-links a { color: #94a3b8; text-decoration: none; transition: color 0.3s; }
+        .footer-links a:hover { color: var(--primary); }
+
+        .copyright {
+            padding-top: 40px;
+            border-top: 1px solid #1e293b;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 36px; }
+            .problem-grid, .features-grid, .footer-grid { grid-template-columns: 1fr; }
+            .nav-links { display: none; }
+            .security-box { flex-direction: column; text-align: center; padding: 40px 20px; }
+            .mobile-video-wrapper { max-width: 260px; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container">
+        <nav>
+            <div class="logo">E-<span>CoA</span></div>
+            <ul class="nav-links">
+                <li><a href="#como-funciona">Como Funciona</a></li>
+                <li><a href="#problema">O Problema</a></li>
+                <li><a href="#solucao">O App</a></li>
+                <li><a href="#seguranca">Segurança</a></li>
+            </ul>
+            <a href="#contato" class="btn btn-primary" style="padding: 10px 20px; font-size: 14px;">Demo Grátis</a>
+        </nav>
+    </div>
+</header>
+
+<section class="hero">
+    <div class="container">
+        <span class="section-tag">Nova Era no Home Care</span>
+        <h1>Comunicação assistencial inteligente, segura e organizada.</h1>
+        <p>Elimine o caos do WhatsApp e ferramentas improvisadas. Centralize toda a jornada do paciente em uma plataforma feita para profissionais de saúde.</p>
+        <div class="hero-btns">
+            <a href="#contato" class="btn btn-primary">Começar agora</a>
+            <a href="#como-funciona" class="btn" style="color: var(--text-main); margin-left: 10px;">Ver vídeo Institucional <i class="fa-solid fa-play" style="margin-left: 5px; font-size: 12px;"></i></a>
+        </div>
+    </div>
+</section>
+
+<section id="como-funciona" class="video-section">
+    <div class="container">
+        <div class="video-wrapper">
+            <iframe src="https://www.youtube.com/embed/MBjZqGDRKIM" title="E-CoA - Como Funciona" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    </div>
+</section>
+
+<section id="problema" class="problem">
+    <div class="container">
+        <span class="section-tag">O Desafio Atual</span>
+        <h2 class="section-title">Por que o "jeitinho" digital está prejudicando sua operação?</h2>
+        <div class="problem-grid">
+            <div class="problem-card">
+                <i class="fa-solid fa-triangle-exclamation"></i>
+                <h3>Insegurança Jurídica</h3>
+                <p>Dados de pacientes em grupos de WhatsApp expõem sua empresa a multas pesadas e riscos éticos.</p>
+            </div>
+            <div class="problem-card">
+                <i class="fa-solid fa-comments-dollar"></i>
+                <h3>Ruídos de Comunicação</h3>
+                <p>63% das falhas no Home Care ocorrem por má troca de informações entre plantonistas e equipe técnica.</p>
+            </div>
+            <div class="problem-card">
+                <i class="fa-solid fa-clock-rotate-left"></i>
+                <h3>Falta de Auditoria</h3>
+                <p>É impossível rastrear decisões e condutas em conversas informais quando ocorre uma intercorrência grave.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="solucao" class="features">
+    <div class="container">
+        <div class="features-grid">
+            <div>
+                <span class="section-tag" style="text-align: left;">Experiência Mobile</span>
+                <h2 class="section-title" style="text-align: left; margin-bottom: 40px;">O App E-CoA na palma da mão da sua equipe.</h2>
+                
+                <div class="feature-item">
+                    <div class="feature-icon"><i class="fa-solid fa-mobile-screen"></i></div>
+                    <div class="feature-text">
+                        <h4>Interface Intuitiva</h4>
+                        <p>Desenvolvido para uso em campo (beira leito), com navegação fluida adaptada à rotina corrida dos profissionais de saúde.</p>
+                    </div>
+                </div>
+
+                <div class="feature-item">
+                    <div class="feature-icon"><i class="fa-solid fa-hospital-user"></i></div>
+                    <div class="feature-text">
+                        <h4>Mural do Paciente</h4>
+                        <p>Linha do tempo completa com todas as intercorrências, fotos e evoluções acessíveis em tempo real.</p>
+                    </div>
+                </div>
+
+                <div class="feature-item">
+                    <div class="feature-icon"><i class="fa-solid fa-message"></i></div>
+                    <div class="feature-text">
+                        <h4>Chat Profissional Estruturado</h4>
+                        <p>Conversas separadas por paciente, com permissões de acesso baseadas no perfil técnico.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="background: rgba(255,255,255,0.05); border-radius: 20px; padding: 40px; border: 1px solid rgba(255,255,255,0.1); text-align: center;">
+                <div class="mobile-video-wrapper">
+                    <iframe src="https://www.youtube.com/embed/9D65KAp71d4?autoplay=1&mute=1&loop=1&playlist=9D65KAp71d4" title="Demonstração App E-CoA" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <p style="font-style: italic; color: #94a3b8;">Veja como é simples acessar as informações no dia a dia da assistência.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="seguranca" class="security">
+    <div class="container">
+        <div class="security-box">
+            <div class="security-content">
+                <span class="security-badge">100% COMPLIANT</span>
+                <h2 style="font-size: 32px; margin-bottom: 20px; color: var(--secondary);">Tranquilidade jurídica com LGPD</h2>
+                <p style="color: var(--text-light); margin-bottom: 24px;">Diferente de aplicativos genéricos, o E-CoA utiliza criptografia de nível bancário e servidores dedicados à saúde. Seus dados — e os dos seus pacientes — nunca estiveram tão protegidos.</p>
+                <ul style="list-style: none; text-align: left; display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                    <li><i class="fa-solid fa-check" style="color: #22c55e;"></i> Backup Diário</li>
+                    <li><i class="fa-solid fa-check" style="color: #22c55e;"></i> Controle de Acesso</li>
+                    <li><i class="fa-solid fa-check" style="color: #22c55e;"></i> Logs de Auditoria</li>
+                    <li><i class="fa-solid fa-check" style="color: #22c55e;"></i> Termos Específicos</li>
+                </ul>
+            </div>
+            <div style="font-size: 100px; color: var(--primary); opacity: 0.2;">
+                <i class="fa-solid fa-shield-halved"></i>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="contato" style="padding: 100px 0; text-align: center;">
+    <div class="container">
+        <h2 class="section-title">Pronto para elevar o nível da sua assistência?</h2>
+        <p style="max-width: 600px; margin: -40px auto 40px; color: var(--text-light);">Nossa equipe de especialistas está pronta para mostrar como o E-CoA se adapta à sua rotina operacional.</p>
+        <a href="#" class="btn btn-primary" style="padding: 20px 50px; font-size: 18px;">Solicitar Demonstração Gratuita</a>
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        <div class="footer-grid">
+            <div>
+                <div class="footer-logo">E-<span>CoA</span></div>
+                <p>Inovação tecnológica para a saúde domiciliar. Conectando equipes, protegendo dados e salvando vidas.</p>
+            </div>
+            <div class="footer-links">
+                <h5>Plataforma</h5>
+                <ul>
+                    <li><a href="#">Funcionalidades</a></li>
+                    <li><a href="#">Segurança</a></li>
+                    <li><a href="#">Integrações</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h5>Legal</h5>
+                <ul>
+                    <li><a href="#">Privacidade</a></li>
+                    <li><a href="#">Termos de Uso</a></li>
+                    <li><a href="#">LGPD</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2024 E-CoA Assistência Inteligente. Todos os direitos reservados.</p>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
