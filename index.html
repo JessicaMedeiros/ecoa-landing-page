@@ -394,8 +394,9 @@
 
         .footer-grid {
             display: grid;
-            grid-template-columns: 2fr 1fr 1fr;
-            gap: 60px;
+            /* Modificado para 4 colunas (2fr para o logo e 1fr para cada bloco de links) */
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
             margin-bottom: 60px;
         }
 
@@ -416,6 +417,13 @@
         .footer-links li { margin-bottom: 12px; }
         .footer-links a { color: #94a3b8; text-decoration: none; transition: color 0.3s; }
         .footer-links a:hover { color: var(--primary); }
+        
+        /* Ajuste específico para os ícones sociais */
+        .footer-links li a i {
+            margin-right: 8px;
+            width: 16px;
+            text-align: center;
+        }
 
         .copyright {
             padding-top: 40px;
@@ -610,6 +618,14 @@
                     <li><a href="#">Privacidade</a></li>
                     <li><a href="#">Termos de Uso</a></li>
                     <li><a href="#seguranca">LGPD</a></li>
+                </ul>
+            </div>
+            <!-- NOVA COLUNA ADICIONADA AQUI -->
+            <div class="footer-links">
+                <h5>Redes Sociais</h5>
+                <ul>
+                    <li><a href="https://instagram.com/plataformaecoa" target="_blank"><i class="fa-brands fa-instagram"></i> Instagram</a></li>
+                    <li><a href="https://youtube.com/@E-COA" target="_blank"><i class="fa-brands fa-youtube"></i> YouTube</a></li>
                 </ul>
             </div>
         </div>
